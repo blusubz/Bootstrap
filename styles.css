@@ -1,17 +1,32 @@
-body {
+/* Ensure full height layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     background-color: gray;
 }
 
-/* Style for the entire navbar */
+/* Wrapper layout for sticky footer */
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Navbar Styling ---------- */
 .navbar {
     background-color: #FFDB58 !important;
     padding: 10px;
-
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
 }
 
+/* Ensure brand and nav links are spaced correctly */
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Nav link button style (like "Buttons" and "Cube") */
 .navbar .nav-link {
     color: black;
     text-decoration: none;
@@ -26,28 +41,24 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Remove button styles from Home & About */
+/* Style for Home and About (unstyled buttons) */
 .navbar .plain-link {
     background: none;
     border: none;
-    padding: 8px 8px; /* vertical and horizontal padding */
-    margin: 0 5px;     /* smaller horizontal margin */
+    padding: 8px 8px;
+    margin: 0 5px;
     color: black;
     font-weight: bold;
     text-decoration: none;
     display: inline-block;
 }
 
-
-h1, h2, p {
-    text-align: center;
-}
-
+/* Hover effect */
 .navbar .nav-link:hover {
     color: blue;
 }
 
-/* Style for Giraffe text specifically */
+/* Navbar brand (logo text) */
 .navbar-brand {
     padding: 0;
     margin: 0;
@@ -59,25 +70,56 @@ h1, h2, p {
     display: inline-block;
 }
 
+/* ---------- Responsive Tweaks ---------- */
+@media (max-width: 576px) {
+    .navbar .nav-link {
+        padding: 6px 10px;
+        margin: 0 6px;
+        font-size: 0.9rem;
+    }
+
+    .navbar .plain-link {
+        padding: 6px 6px;
+        margin: 0 3px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+/* ---------- Main Content ---------- */
+main {
+    flex-grow: 1; /* Makes sure main fills space to push footer */
+    padding: 20px;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+/* ---------- Button Styling ---------- */
 .flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-  min-height: 300px; /* adjust based on your button size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    min-height: 300px;
 }
 
 .my-btn {
-    font-size: 2rem; /* Bigger text */
-    padding: 40px 60px; /* More padding */ 
-    border-width: 3px; /* Thicker border */
-    color: black; /* text color */
+    font-size: 2rem;
+    padding: 40px 60px;
+    border-width: 3px;
+    color: black;
     border-color: black;
-    transition: background-color 0.5s ease; /* animation */
+    transition: background-color 0.5s ease;
 }
 
+/* ---------- Footer ---------- */
 footer {
     background-color: #333;
     color: white;
     padding: 20px 0;
+    margin-top: auto; /* Push footer to bottom */
 }

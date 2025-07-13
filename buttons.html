@@ -1,76 +1,70 @@
 <!doctype html>
-
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Giraffe</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
     <div class="wrapper d-flex flex-column min-vh-100">
+      <!-- Navbar -->
       <header>
-        <nav class="navbar navbar-expand-lg bg-light">
-          <div class="container-fluid">
+        <nav class="navbar bg-light">
+          <div class="container-fluid d-flex justify-content-between align-items-center">
             <a class="navbar-brand" href="#">Giraffe</a>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link plain-link active" aria-current="page" href="index.html">Home</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link plain-link" href="about.html">About</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="buttons.html">Buttons</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="cube.html">Cube</a>
-                </li>
-              </ul>
-            </div>
+            <ul class="navbar-nav flex-row">
+              <li class="nav-item me-3">
+                <a class="nav-link plain-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item me-3">
+                <a class="nav-link plain-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item me-3">
+                <a class="nav-link active" aria-current="page" href="#">Buttons</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cube.html">Cube</a>
+              </li>
+            </ul>
           </div>
         </nav>
       </header>
 
-      <main class="flex-grow-1">  
-        <p id="message">Ves el boton?</p>
+      <!-- Main Content -->
+      <main class="flex-grow-1 px-3 py-4">
+        <p id="message">¿Ves el botón?</p>
+
         <div class="flex-center">
           <button id="myButton" type="button" class="btn btn-outline-primary my-btn btn-lg">Click Me</button>
         </div>
-        <p id="message2">Info</p>
-        
 
-        <!-- script for button activity -->
-         <script>
-          document.addEventListener("DOMContentLoaded", function() {
+        <p id="message2">Info</p>
+
+        <!-- Script for button behavior -->
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
             const button = document.getElementById("myButton");
             const message = document.getElementById("message");
+            const message2 = document.getElementById("message2");
 
-            button.addEventListener("click", function() {
-              // change message text
-              message.textContent = "¡Cambio Color!"
-              message2.textContent = "Cambia de color alazar cada vez que lo presionas."
+            button.addEventListener("click", function () {
+              message.textContent = "¡Cambio Color!";
+              message2.textContent = "Cambia de color al azar cada vez que lo presionas.";
 
-              // change the button background to a random color 
-              const hexColor = 16777215;
-              const randomColor = '#' + Math.floor(Math.random() * hexColor).toString(16);
+              const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
               button.style.backgroundColor = randomColor;
             });
           });
-         </script>
+        </script>
 
-
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
       </main>
 
-      <footer class="bg-dark text-white text-center py-3 mt-auto">
+      <!-- Footer -->
+      <footer class="bg-dark text-white text-center py-3">
         &copy; Giraffe
       </footer>
     </div>
