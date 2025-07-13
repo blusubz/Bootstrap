@@ -1,0 +1,11 @@
+Tags:
+1. html
+2. head
+3. title
+4. body
+5. div
+6. ul
+7. li
+8. main
+9. p
+10. footer
